@@ -19,7 +19,7 @@ import { AddressModule } from './core/address/address.module';
       database: process.env.POSTGRES_DATABASE,
       entities: [__dirname + '**/*/entities/*.entity{.ts,.js}'],
       synchronize: true,
-      autoLoadEntities: false,
+      autoLoadEntities: true,
     }),
     UserModule,
     CompanyModule,

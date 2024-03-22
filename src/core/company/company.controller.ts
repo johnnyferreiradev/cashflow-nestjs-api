@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { CompanyService } from './company.service';
 import { CreateCompanyDto } from './dto/create-company.dto';
@@ -16,8 +17,19 @@ export class CompanyController {
   constructor(private readonly companyService: CompanyService) {}
 
   @Post()
-  create(@Body() createCompanyDto: CreateCompanyDto) {
-    return this.companyService.create(createCompanyDto);
+  async create(@Body() createCompanyDto: CreateCompanyDto) {
+    try {
+      const company = await this.companyService.create(createCompanyDto);
+      return {
+        id: company.id,
+        name: company.name,
+      };
+    } catch (error) {
+      throw new InternalServerErrorException('Something bad happened', {
+        cause: new Error(),
+        description: 'An error occurred while creating a company',
+      });
+    }
   }
 
   @Get()

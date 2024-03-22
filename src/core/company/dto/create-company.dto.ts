@@ -12,9 +12,11 @@ export class CreateCompanyDto {
   @MaxLength(255)
   name: string;
 
+  @IsOptional()
   @MaxLength(20)
   phoneNumber: string;
 
+  @IsOptional()
   @MaxLength(255)
   email: string;
 
@@ -22,12 +24,15 @@ export class CreateCompanyDto {
   @IsEnum(CompanyTypes)
   type: CompanyTypes;
 
+  @IsOptional()
   @MaxLength(255)
   cnpj: string;
 
+  @IsOptional()
   @MaxLength(255)
   cpf: string;
 
+  @IsOptional()
   @IsUUID()
   address: string;
 }

@@ -9,7 +9,7 @@ import { CompanyTypes } from '../enums/index.enums';
 import { Address } from 'src/core/address/entities/address.entity';
 import { TimestempEntity } from 'src/utils/entities';
 
-@Entity()
+@Entity('company')
 export class Company extends TimestempEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
