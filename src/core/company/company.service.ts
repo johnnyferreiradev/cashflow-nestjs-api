@@ -14,8 +14,7 @@ export class CompanyService {
 
   async create(createCompanyDto: CreateCompanyDto) {
     const company = await this.companiesRepository.create(createCompanyDto);
-    console.log(company);
-    return 'This action adds a new company';
+    return this.companiesRepository.save(company);
   }
 
   findAll() {

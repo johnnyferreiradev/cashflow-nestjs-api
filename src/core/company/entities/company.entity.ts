@@ -37,5 +37,5 @@ export class Company extends TimestempEntity {
 
   @OneToOne(() => Address, (address) => address.id, { nullable: true })
   @JoinColumn()
-  address: Address;
+  address: string;
 }
