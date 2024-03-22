@@ -26,7 +26,7 @@ export class CompanyController {
       };
     } catch (error) {
       throw new InternalServerErrorException('Something bad happened', {
-        cause: new Error(),
+        cause: new Error(error),
         description: 'An error occurred while creating a company',
       });
     }
