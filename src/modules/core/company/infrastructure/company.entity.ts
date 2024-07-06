@@ -5,9 +5,9 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { CompanyTypes } from '../enums/index.enums';
-import { Address } from 'src/core/address/entities/address.entity';
-import { TimestempEntity } from 'src/utils/entities';
+import { Address } from 'src/modules/core/address/entities/address.entity';
+import { TimestempEntity } from 'src/infrastructure/common/utils/entities';
+import { CompanyTypes } from '../domain/company.enums';
 
 @Entity('company')
 export class Company extends TimestempEntity {
@@ -27,7 +27,7 @@ export class Company extends TimestempEntity {
   email: string;
 
   @Column({ type: 'enum', enum: CompanyTypes, nullable: true })
-  type: CompanyTypes;
+  companyType: CompanyTypes;
 
   @Column({ type: 'varchar', length: 255, nullable: true })
   cnpj: string;

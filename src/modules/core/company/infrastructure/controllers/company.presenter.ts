@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { CompanyTypes } from '../enums/index.enums';
-import { CompanyModel } from '../domain/company.model';
+import { CompanyTypes } from '../../domain/company.enums';
+import { CompanyModel } from '../../domain/company.model';
 
 export class CompanyPresenter {
   @ApiProperty()

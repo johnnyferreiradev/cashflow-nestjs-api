@@ -2,13 +2,13 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { LoggerModule } from 'src/infrastructure/logger/logger.module';
 import { RepositoriesModule } from 'src/infrastructure/repositories/repositories.module';
 import { ExceptionsModule } from 'src/infrastructure/exceptions/exceptions.module';
-import { DatabaseCompanyRepository } from '../../core/company/infrastructure/company.repository';
+import { DatabaseCompanyRepository } from '../../modules/core/company/infrastructure/company.repository';
 import { UseCaseProxy } from './usecases-proxy';
-import { GetCompanyUseCase } from 'src/core/company/usecases/get-company.usecase';
-import { GetCompaniesUseCase } from 'src/core/company/usecases/get-companies.usecase';
-import { CreateCompanyUseCase } from 'src/core/company/usecases/create-company.usecase';
-import { UpdateCompanyUseCase } from 'src/core/company/usecases/update-company.usecase';
-import { DeleteCompanyUseCase } from 'src/core/company/usecases/delete-company.usecase';
+import { GetCompanyUseCase } from 'src/modules/core/company/usecases/get-company.usecase';
+import { GetCompaniesUseCase } from 'src/modules/core/company/usecases/get-companies.usecase';
+import { CreateCompanyUseCase } from 'src/modules/core/company/usecases/create-company.usecase';
+import { UpdateCompanyUseCase } from 'src/modules/core/company/usecases/update-company.usecase';
+import { DeleteCompanyUseCase } from 'src/modules/core/company/usecases/delete-company.usecase';
 import { LoggerService } from '../logger/logger.service';
 
 @Module({

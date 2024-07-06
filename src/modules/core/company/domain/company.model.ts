@@ -1,4 +1,4 @@
-import { CompanyTypes } from '../enums/index.enums';
+import { CompanyTypes } from './company.enums';
 
 export class CompanyModel {
   id: string;

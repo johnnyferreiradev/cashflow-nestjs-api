@@ -5,7 +5,9 @@ import {
   IsUUID,
   MaxLength,
 } from 'class-validator';
-import { CompanyTypes } from '../enums/index.enums';
+import { PartialType } from '@nestjs/mapped-types';
+import { ApiProperty } from '@nestjs/swagger';
+import { CompanyTypes } from '../../domain/company.enums';
 
 export class CreateCompanyDto {
   @IsNotEmpty()
@@ -22,7 +24,7 @@ export class CreateCompanyDto {
 
   @IsOptional()
   @IsEnum(CompanyTypes)
-  type: CompanyTypes;
+  companyType: CompanyTypes;
 
   @IsOptional()
   @MaxLength(255)
@@ -35,4 +37,11 @@ export class CreateCompanyDto {
   @IsOptional()
   @IsUUID()
   address: string;
+}
+
+export class UpdateCompanyDto extends PartialType(CreateCompanyDto) {
+  @ApiProperty({ required: true })
+  @IsNotEmpty()
+  @IsUUID()
+  readonly id: string;
 }

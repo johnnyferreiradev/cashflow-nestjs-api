@@ -9,17 +9,17 @@ import {
   Put,
 } from '@nestjs/common';
 import { ApiExtraModels, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UseCaseProxy } from 'src/infrastructure/usecases-proxy/usecases-proxy';
-import { UsecasesProxyModule } from 'src/infrastructure/usecases-proxy/usecases-proxy.module';
-import { GetCompanyUseCase } from '../usecases/get-company.usecase';
-import { GetCompaniesUseCase } from '../usecases/get-companies.usecase';
-import { CreateCompanyUseCase } from '../usecases/create-company.usecase';
-import { UpdateCompanyUseCase } from '../usecases/update-company.usecase';
-import { DeleteCompanyUseCase } from '../usecases/delete-company.usecase';
-import { CompanyPresenter } from './company.presenter';
-import { ApiResponseType } from 'src/infrastructure/common/swagger/response.decorator';
 import { CreateCompanyDto, UpdateCompanyDto } from './company.dto';
-import { CompanyTypes } from '../domain/company.enums';
+import { CompanyPresenter } from './company.presenter';
+import { UsecasesProxyModule } from 'src/infrastructure/usecases-proxy/usecases-proxy.module';
+import { UseCaseProxy } from 'src/infrastructure/usecases-proxy/usecases-proxy';
+import { GetCompanyUseCase } from '../../usecases/get-company.usecase';
+import { GetCompaniesUseCase } from '../../usecases/get-companies.usecase';
+import { CreateCompanyUseCase } from '../../usecases/create-company.usecase';
+import { UpdateCompanyUseCase } from '../../usecases/update-company.usecase';
+import { DeleteCompanyUseCase } from '../../usecases/delete-company.usecase';
+import { ApiResponseType } from 'src/infrastructure/common/swagger/response.decorator';
+import { CompanyTypes } from '../../domain/company.enums';
 
 @Controller('company')
 @ApiTags('company')

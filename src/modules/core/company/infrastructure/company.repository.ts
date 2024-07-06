@@ -4,8 +4,8 @@ import { CompanyModel } from '../domain/company.model';
 import { CompanyRepository } from '../domain/company.repository';
 import { Company } from './company.entity';
 import { Repository } from 'typeorm';
-import { CompanyTypes } from '../enums/index.enums';
 import { UpdateCompanyDto } from '../domain/company.dtos';
+import { CompanyTypes } from '../domain/company.enums';
 
 @Injectable()
 export class DatabaseCompanyRepository implements CompanyRepository {

@@ -1,4 +1,4 @@
-import { TimestempEntity } from 'src/utils/entities';
+import { TimestempEntity } from 'src/infrastructure/utils/entities';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

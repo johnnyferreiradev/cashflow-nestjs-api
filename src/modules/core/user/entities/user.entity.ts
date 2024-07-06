@@ -1,5 +1,5 @@
-import { Company } from 'src/core/company/entities/company.entity';
-import { TimestempEntity } from 'src/utils/entities';
+import { Company } from 'src/modules/core/company/entities/company.entity';
+import { TimestempEntity } from 'src/infrastructure/common/utils/entities';
 import {
   Column,
   Entity,
